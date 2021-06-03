@@ -1,24 +1,4 @@
-var products = [
-    {
-        id: "1",
-        brand: "Gucci",
-        name: "Blue dress",
-        orgprice:"$4,000",
-        price: "$1,599",
-        size: "M",
-        imgUrl: "https://res.cloudinary.com/dhtmzwisa/image/upload/v1619962431/Kiwu/BAL02219_1_ryq7zk.jpg",
-        brief:"This impressive paella is a perfect party dish and a fun meal to cook together with your"
-    },
-    {
-        id: "2",
-        brand: "Dolce & Gabbana",
-        name: "Traditional Saree",
-        orgprice:"$4,000",
-        price: "$1,499",
-        size: "L",
-        imgUrl: "https://res.cloudinary.com/cloud5427/image/upload/v1620032116/Capture_xnjaqu.png",
-        brief:"This impressive paella is a perfect party dish and a fun meal to cook together with your"
-    },
+var jeans = [
     {
         id: "3",
         brand: "Forever'21",
@@ -103,4 +83,4 @@ var products = [
         },    
 ]
 
-export default products;
+export default jeans;

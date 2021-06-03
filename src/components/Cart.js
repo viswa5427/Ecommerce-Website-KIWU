@@ -1,18 +1,25 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import {Col} from 'react-bootstrap'
+import AddCart from './AddCart.js'
 
-function Cart({items}) {
+function Cart(props) {
+//   function AddtoCart(){
+//     <AddCart />
+//      console.log(props)
+// }
   return (
-    <Card style={{margin:"10px"}}>
+    <Col lg={3} md={4} sm={6} style={{padding:"10px"}}>
+    <Card >
       <Card.Img
-        style={{ width: "100%", height:"300px" }}
+        style={{width:"100%",height:"250px" }}
         variant="top"
-        src={items.imgUrl}
+        src={props.items.imgUrl}
       />
-      <Card.Body style={{margin:"5px"}}>
-        <Card.Title style={{ fontSize: "125%" }}>{items.name}</Card.Title>
+      <Card.Body>
+        <Card.Title style={{ fontSize: "125%" }}>{props.items.name}</Card.Title>
         <Card.Text style={{ marginTop: "5px", marginBottom: "11px" }}>
-          {items.brief}
+          {props.items.brief}
         </Card.Text>
         <div style={{ display: "flex" }}>
           <div>
@@ -36,27 +43,29 @@ function Cart({items}) {
                 textAlign: "center"
               }}
             >
-              {items.orgprice}
+              {props.items.orgprice}
             </div>
             <div
               style={{
                 color: "black",
-                width: "90%",
+                width: "100%",
                 fontWeight: "bold",
                 fontSize: "100%"
               }}
             >
-              {items.price}
+              {props.items.price}
             </div>
           </div>
-          <div style={{ paddingLeft: "2%" }}>
-            <button style={{ cursor: "pointer" }}>
+          <div style={{ marginLeft: "2%" }}>
+            <button style={{ cursor: "pointer", backgroundColor:"#FF69B4", borderRadius:"50px"}} onClick={()=> AddCart(props.items)}>
               <i
-                class="fas fa-shopping-cart"
+                className="fas fa-shopping-cart"
                 style={{
                   width: "100%",
+                  color: 'white',
                   marginTop: "10px",
-                  marginBottom: "5px"
+                  marginBottom: "5px",
+                  fontSize:"28px"
                 }}
               ></i>
             </button>
@@ -64,6 +73,7 @@ function Cart({items}) {
         </div>
       </Card.Body>
     </Card>
+    </Col>
   );
 }
 
