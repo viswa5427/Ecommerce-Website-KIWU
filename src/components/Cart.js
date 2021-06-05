@@ -4,12 +4,9 @@ import {Col} from 'react-bootstrap'
 import AddCart from './AddCart.js'
 
 function Cart(props) {
-//   function AddtoCart(){
-//     <AddCart />
-//      console.log(props)
-// }
   return (
     <Col lg={3} md={4} sm={6} style={{padding:"10px"}}>
+    <a style={{cursor:"pointer"}}>
     <Card >
       <Card.Img
         style={{width:"100%",height:"250px" }}
@@ -18,7 +15,7 @@ function Cart(props) {
       />
       <Card.Body>
         <Card.Title style={{ fontSize: "125%" }}>{props.items.name}</Card.Title>
-        <Card.Text style={{ marginTop: "5px", marginBottom: "11px" }}>
+        <Card.Text style={{ marginTop: "5px", marginBottom: "11px", cursor:"default" }}>
           {props.items.brief}
         </Card.Text>
         <div style={{ display: "flex" }}>
@@ -36,7 +33,7 @@ function Cart(props) {
             <div
               style={{
                 color: "red",
-                width: "90%",
+                width: "100%",
                 fontWeight: "200",
                 fontSize: "90%",
                 textDecorationLine: "line-through",
@@ -73,6 +70,7 @@ function Cart(props) {
         </div>
       </Card.Body>
     </Card>
+    </a>
     </Col>
   );
 }

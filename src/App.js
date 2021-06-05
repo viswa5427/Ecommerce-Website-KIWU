@@ -1,26 +1,25 @@
 import React, {useState} from 'react'
-import products from './components/products.js'
 import ProductsDisplay from './components/ProductsDisplay.js'
-import jeans from './components/jeans.js'
 
 
 function App1(){
-  const [active, setActive] = useState("Sarees");
+  const [active, setActive] = useState("dress");
   return(
   <div className="App">
     <nav>
-      <button onClick={() => setActive("Sarees")}>Sarees</button>
-      <button onClick={() => setActive("Jeans")}>Jeans</button>
-      <button onClick={() => setActive("Legins")}>Legins</button>
+      <button onClick={() => setActive("dress")}>Dress</button>
+      <button onClick={() => setActive("saree")}>Saree</button>
+      <button onClick={() => setActive("jeans")}>Jeans</button>
     </nav>
     <div>
-      {active === "Sarees" && <ProductsDisplay products={products} />}
-      {active === "Jeans" && <ProductsDisplay products={jeans} />}
-      {active === "Legins" && <ProductsDisplay products={products} />}
+      {active === "dress" && <ProductsDisplay category={"dress"} />}
+      {active === "saree" && <ProductsDisplay category={"saree"} />}
+      {active === "jeans" && <ProductsDisplay category={"jeans"} />}
     </div>
   </div>
   );
 }
+
 
 
 function App(){

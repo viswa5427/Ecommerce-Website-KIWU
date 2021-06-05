@@ -1,18 +1,22 @@
 import React from 'react'
-import Cart from './Cart'
+import Cart from './Cart.js'
 import {Row} from 'react-bootstrap'
-
+import products from './products.js'
 
 function ProductDisplay(props){
-    let content = [];
-    props.products.forEach((product, i) =>{
-          content.push(     
-              <Cart items={product} key={i}/>
-          )
-    });
-    return(
-      <Row style={{margin:"10px"}}>{content}</Row>
-    )
+  let content = [];
+  products.forEach((product, i) =>{
+    if (props.category===product.category)
+    {
+        content.push(     
+            <Cart items={product} key={i}/>
+        )
+   }
+  });
+  return(
+    <Row style={{margin:"10px"}}>{content}</Row>
+  )
 }
+
 
 export default ProductDisplay;
